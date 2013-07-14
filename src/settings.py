@@ -102,6 +102,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'index',
     'news',
+    'debug_toolbar',
 )
 
 # A sample logging configuration. The only tangible logging
