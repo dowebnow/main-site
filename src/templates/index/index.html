@@ -5,11 +5,15 @@
     <meta charset="utf-8" />
     <title>Django says Hello World!</title>
 
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=cyrillic-ext,latin-ext" />
     <link type="text/css" rel="stylesheet" href="{% static "css/init.css" %}" />
 
     <script type="text/javascript" src="{% static "js/vendor/jquery-1.10.2.min.js" %}"></script>
 </head>
-<body>
+<!--[if lt IE 8]><body class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><body class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><body class="lt-ie10 ie9"><![endif]-->
+<!--[if gt IE 9]><!--><body><!--<![endif]-->
     Hello World!
     <script type="text/javascript">
         console.log($);
