@@ -32,12 +32,13 @@ html {
         font-weight: bold;
         line-height: 32px;
     }
-    .post__content {
-        margin: 0;
+    .post__content {}
+        .post__content p {
+            margin: 0;
 
-        color: #8e8071;
-        font-family: 'Open Sans Condensed', sans-serif;
-        font-size: 14px;
-        font-weight: normal;
-        line-height: 18px;
-    }
+            color: #8e8071;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 20px;
+        }
