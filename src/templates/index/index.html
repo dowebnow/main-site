@@ -1,6 +1,6 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html ng-app="doWebNow">
 <head>
     <meta charset="utf-8" />
     <title>Django says Hello World!</title>
@@ -9,6 +9,7 @@
     <link type="text/css" rel="stylesheet" href="{% static "css/vendor/normalize.css" %}" />
     <link type="text/css" rel="stylesheet" href="{% static "css/init.css" %}" />
 
+    <script type="text/javascript" src="{% static "js/vendor/angular.min.js" %}"></script>
     <script type="text/javascript" src="{% static "js/vendor/jquery-1.10.2.min.js" %}"></script>
 </head>
 <!--[if lt IE 8]><body class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
@@ -16,23 +17,7 @@
 <!--[if IE 9]><body class="lt-ie10 ie9"><![endif]-->
 <!--[if gt IE 9]><!--><body><!--<![endif]-->
 
-    <div class="layout">
-
-        <div class="post">
-            <h2 class="post__title">New icon pack released!</h2>
-            <div class="post__content">
-                <p>Web servers, by their very nature, are usually exposed to outsiders and thus are vulnerable to compromise and attack. Internet Information Services (IIS) version 6,included with Windows Server 2003, provides a number of new security features designed to increase web server. Placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris ...</p>
-            </div>
-        </div>
-
-        <div class="post">
-            <h2 class="post__title">New icon pack released!</h2>
-            <div class="post__content">
-                <p>Web servers, by their very nature, are usually exposed to outsiders and thus are vulnerable to compromise and attack. Internet Information Services (IIS) version 6,included with Windows Server 2003, provides a number of new security features designed to increase web server. Placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris ...</p>
-            </div>
-        </div>
-
-    </div>
+    <div class="layout" ng-view></div>
 
 </body>
 </html>
