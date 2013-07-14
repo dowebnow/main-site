@@ -166,7 +166,10 @@ DEBUG_TOOLBAR_CONFIG = {
 COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile} {outfile}'),
 )
-COMPRESS_ENABLED = False
+
+COMPRESS_CSS_FILTERS = (
+    'compressor.filters.csstidy.CSSTidyFilter',
+)
 
 # Credit to http://djangosnippets.org/snippets/1873/ for this.
 try:
