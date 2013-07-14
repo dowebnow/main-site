@@ -150,6 +150,17 @@ DEBUG_TOOLBAR_PANELS = (
     # 'debug_toolbar.panels.profiler.ProfilerDebugPanel',
 ) 
 
+def custom_show_toolbar(request):
+    if not (('/admin/' in request.path) or ('/mobile/' in request.path)):
+        return DEBUG # Always show toolbar, for example purposes only.
+    else:
+        return False
+
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False,
+    'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
+} 
+
 # Credit to http://djangosnippets.org/snippets/1873/ for this.
 try:
     from local_settings import *
