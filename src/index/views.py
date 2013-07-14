@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
-from django.utils import simplejson
+import json
 
 def index(request):
     template = loader.get_template('index/index.html')
@@ -13,5 +13,5 @@ def test(request):
     data = {
         'some_string': 'Hello World!',
     }
-    responce = simplejson.dumps(data)
+    responce = json.dumps(data)
     return HttpResponse(responce, mimetype='application/json')
