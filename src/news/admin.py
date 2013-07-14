@@ -1,4 +1,7 @@
 from django.contrib import admin
 from news.models import News
 
-admin.site.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    fields = ['title', 'published_date']
+
+admin.site.register(News, NewsAdmin)
