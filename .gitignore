@@ -227,5 +227,5 @@ include
 lib
 local
 static
-src/dowebnow/settings.py
+src/dowebnow/settings_local.py
 src/uwsgi.ini
