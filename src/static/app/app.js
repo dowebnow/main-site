@@ -5,6 +5,10 @@ angular.module('doWebNow', [])
                 templateUrl: '/static/partials/home/home.html',
                 controller: HomeController
             })
+            .when('/test', {
+                templateUrl: '/static/partials/test/test.html',
+                controller: TestController
+            })
             .otherwise({
                 redirectTo: '/'
             });
