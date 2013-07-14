@@ -7,7 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'index.views.index', name='index'),
-    url(r'^/test.json$', 'index.views.test', name='index_test'),
+    url(r'^test.json$', 'index.views.test', name='index_test'),
     # url(r'^dowebnow/', include('dowebnow.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
