@@ -226,6 +226,6 @@ bin
 include
 lib
 local
-static
+/static
 src/local_settings.py
 src/uwsgi.ini
