@@ -166,7 +166,7 @@ DEBUG_TOOLBAR_CONFIG = {
 COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile} {outfile}'),
 )
-COMPRESS = False
+COMPRESS_ENABLED = False
 
 # Credit to http://djangosnippets.org/snippets/1873/ for this.
 try:
