@@ -56,6 +56,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -104,6 +105,7 @@ INSTALLED_APPS = (
     'index',
     'news',
     'debug_toolbar',
+    'compressor',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -159,7 +161,12 @@ def custom_show_toolbar(request):
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
     'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
-} 
+}
+
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'lessc {infile} {outfile}'),
+)
+COMPRESS = False
 
 # Credit to http://djangosnippets.org/snippets/1873/ for this.
 try:
