@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load compress %}
 <!DOCTYPE html>
 <html ng-app="doWebNow">
 <head>
@@ -6,11 +7,14 @@
     <title>Django says Hello World!</title>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-    <link type="text/css" rel="stylesheet" href="{% static "css/vendor/normalize.css" %}" />
-    <link type="text/css" rel="stylesheet" href="{% static "css/init.css" %}" />
-
-    <script type="text/javascript" src="{% static "js/vendor/angular.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/vendor/jquery-1.10.2.min.js" %}"></script>
+    {% compress css %}
+        <link type="text/css" rel="stylesheet" href="/static/css/vendor/normalize.css" />
+        <link type="text/css" rel="stylesheet" href="/static/css/init.css" />
+    {% endcompress %}
+    {% compress js %}
+        <script type="text/javascript" src="js/vendor/angular.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery-1.10.2.min.js"></script>
+    {% endcompress %}
 </head>
 <!--[if lt IE 8]><body class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
 <!--[if IE 8]><body class="lt-ie10 lt-ie9 ie8"><![endif]-->
