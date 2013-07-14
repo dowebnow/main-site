@@ -1,0 +1,10 @@
+[uwsgi]
+socket = 127.0.0.1:3031
+chdir = /
+pythonpath = ..
+env = DJANGO_SETTINGS_MODULE=dowebnow.settings
+module = django.core.handlers.wsgi:WSGIHandler()
+processes = 1
+threads = 2
+stats = 127.0.0.1:9191
+py-autoreload=3

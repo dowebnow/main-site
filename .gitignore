@@ -228,3 +228,4 @@ lib
 local
 static
 src/dowebnow/settings.py
+src/uwsgi.ini
