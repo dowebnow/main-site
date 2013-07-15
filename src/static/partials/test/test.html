@@ -1,5 +1,5 @@
-<div ng-controller="TestController">
-    <h2>{{ vars.title }}</h2>
-    <div>{{ vars.content }}</div>
-    <div>{{ vars.date | date:'short' }}</div>
+<div ng-controller="TestController" ng-repeat="item in vars.data">
+    <h2>{{ item.fields.title }}</h2>
+    <div>{{ item.fields.full_text }}</div>
+    <div>{{ item.fields.published_date | date:'short' }}</div>
 </div>
