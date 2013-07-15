@@ -1,5 +1,5 @@
 <ul>
     <li ng-class="vars.getClass(menuItem.link)" ng-repeat="menuItem in vars.menuItems">
-        <a ng-click="vars.toggleSelect(menuItem.link)" href="{{ menuItem.link }}">{{ sidebarMenuItem.name }}</a>
+        <a ng-click="vars.toggleSelect(menuItem.link)" href="{{ menuItem.link }}">{{ menuItem.name }}</a>
     </li>
 </ul>
