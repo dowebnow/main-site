@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
-import json
+from django.core import serializers
 
 from news.models import News
 
@@ -12,6 +12,5 @@ def index(request):
     return HttpResponse(template.render(context))
 
 def test(request):
-    news = News.objects.get()
-    responce = json.dumps(news)
-    return HttpResponse(responce, mimetype='application/json')
+    data = serializers.serialize("json", News.objects.all())
+    return HttpResponse(data, mimetype='application/json')
