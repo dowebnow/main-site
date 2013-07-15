@@ -16,8 +16,12 @@
         <script type="text/javascript" src="/static/js/vendor/jquery-1.10.2.min.js"></script>
 
         <script type="text/javascript" src="/static/app/app.js"></script>
+
+        <script type="text/javascript" src="/static/app/menu/MenuController.js"></script>
         <script type="text/javascript" src="/static/app/home/HomeController.js"></script>
         <script type="text/javascript" src="/static/app/test/TestController.js"></script>
+
+        <script type="text/javascript" src="/static/directives/menu.js"></script>
     {% endcompress %}
 </head>
 <!--[if lt IE 8]><body class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
@@ -25,6 +29,9 @@
 <!--[if IE 9]><body class="lt-ie10 ie9"><![endif]-->
 <!--[if gt IE 9]><!--><body><!--<![endif]-->
 
+    <div class="menu" ng-controller="MenuController">
+        <menu></menu>
+    </div>
     <div class="layout" ng-view></div>
 
 </body>
