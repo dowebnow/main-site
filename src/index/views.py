@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.template import RequestContext, loader
 import json
 
-from news import News
+from news.models import News
 
 def index(request):
     template = loader.get_template('index/index.html')
