@@ -3,9 +3,7 @@ angular.module('doWebNow')
     var menuDirective = {
         templateUrl: '/static/partials/menu.html',
         restrict: 'E',
-        controller: ["$scope", "$element", "$attrs", function($scope, $element, $attrs) {
-            console.log('controller');
-        }]
+        controller: MenuController
     };
     return menuDirective;
 });
