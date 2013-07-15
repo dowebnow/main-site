@@ -1,14 +1,16 @@
-function MenuController($scope){
+function MenuController($scope, $location){
+    var selectedLink = $location.$$url ? '#' + $location.$$url : '#/';
+
     $scope.vars = {};
 
     $scope.vars.menuItems = [
         {
             'name': 'Home',
-            'link': '/'
+            'link': '#/'
         },
         {
             'name': 'Test',
-            'link': '/test'
+            'link': '#/test'
         }
     ];
 
@@ -17,10 +19,10 @@ function MenuController($scope){
     };
 
     $scope.vars.getClass = function(link){
-        if( link === selectedLink ){
-            return "active";
+        if(link === selectedLink){
+            return 'active';
         } else {
-            return "";
+            return '';
         };
     };
 };
