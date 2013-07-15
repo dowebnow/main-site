@@ -1,4 +1,4 @@
-function MenuController($scope, $){
+function MenuController($scope){
     $scope.vars = {};
 
     $scope.vars.menuItems = [
