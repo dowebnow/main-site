@@ -1,5 +1,5 @@
 angular.module('doWebNow', [])
-    .config(['$routeProvider', function($routeProvider){
+    .config(['$routeProvider', '$locationProvider', function($routeProvider){
         $routeProvider
             .when('/', {
                 templateUrl: '/static/partials/home/home.html',
@@ -12,5 +12,6 @@ angular.module('doWebNow', [])
             .otherwise({
                 redirectTo: '/'
             });
+        $locationProvider.html5Mode(true);
     }])
     .run();
