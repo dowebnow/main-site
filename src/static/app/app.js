@@ -1,16 +1,16 @@
 angular.module('doWebNow', [])
     .config(['$routeProvider', function($routeProvider){
         $routeProvider
-            .when('/', {
+            .when('', {
                 templateUrl: '/static/partials/home/home.html',
                 controller: HomeController
             })
-            .when('/test', {
+            .when('test', {
                 templateUrl: '/static/partials/test/test.html',
                 controller: TestController
             })
             .otherwise({
-                redirectTo: '/'
+                redirectTo: ''
             });
     }])
     .run();

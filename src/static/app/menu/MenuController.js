@@ -6,11 +6,11 @@ function MenuController($scope, $location){
     $scope.vars.menuItems = [
         {
             'name': 'Home',
-            'link': '#/'
+            'link': ''
         },
         {
             'name': 'Test',
-            'link': '#/test'
+            'link': 'test'
         }
     ];
 
