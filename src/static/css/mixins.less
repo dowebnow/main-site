@@ -1,0 +1,53 @@
+.clearfix {
+    &:after,
+    &:before {
+        display: table;
+
+        content: '';
+    }
+    &:after {
+        clear: both;
+    }
+    .lt-ie8 & {
+        zoom: 1;
+    }
+}
+
+.negative-indent {
+    text-indent: -99999px;
+}
+
+.justify {
+    font-size: 1px;
+    line-height: 0;
+    text-align: justify;
+    text-justify: newspaper;
+
+    &:after {
+        display: inline-block;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        width: 100%;
+
+        content: '';
+    }
+
+    .lt-ie8 & {
+        text-align-last: justify;
+
+        zoom: 1;
+    }
+}
+
+.inline-block {
+    display: inline-block;
+
+    vertical-align: top;
+
+    .lt-ie8 & {
+        display: inline;
+
+        zoom: 1;
+    }
+}

@@ -8,8 +8,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
     {% compress css %}
-        <link type="text/css" rel="stylesheet" href="/static/css/vendor/normalize.css" />
-        <link type="text/css" rel="stylesheet" href="/static/css/init.css" />
+        <link type="text/less" rel="stylesheet" href="/static/css/init.less" />
     {% endcompress %}
     {% compress js %}
         <script type="text/javascript" src="/static/js/vendor/jquery-1.10.2.min.js"></script>
@@ -17,7 +16,8 @@
 
         <script type="text/javascript" src="/static/app/app.js"></script>
 
-        <script type="text/javascript" src="/static/app/menu/MenuController.js"></script>
+        <script type="text/javascript" src="/static/app/menu/MenuHeaderController.js"></script>
+        <script type="text/javascript" src="/static/app/menu/MenuFooterController.js"></script>
         <script type="text/javascript" src="/static/app/home/HomeController.js"></script>
         <script type="text/javascript" src="/static/app/test/TestController.js"></script>
 
@@ -29,8 +29,29 @@
 <!--[if IE 9]><body class="lt-ie10 ie9"><![endif]-->
 <!--[if gt IE 9]><!--><body><!--<![endif]-->
 
-    <menu></menu>
-    <div class="layout" ng-view></div>
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo"></div>
+            <div class="header__slogan"></div>
+            <div class="header__menu">
+                <menu-header></menu-header>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout">
+        <div class="layout__inner" ng-view></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__logo"></div>
+            <div class="footer__slogan"></div>
+            <div class="footer__menu">
+                <menu-footer></menu-footer>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

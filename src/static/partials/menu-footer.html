@@ -1,0 +1,5 @@
+<ul class="menu-footer">
+    <li class="menu-footer__item" ng-repeat="menuItem in vars.menuItems">
+        <a class="menu-footer__link" ng-class="footer.getClass(menuItem.link)" ng-click="vars.toggleSelect(menuItem.link)" href="{{ menuItem.link }}">{{ menuItem.name }}</a>
+    </li>
+</ul>

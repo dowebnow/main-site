@@ -1,16 +1,17 @@
-function MenuController($scope, $location){
-    var selectedLink = $location.$$url ? '#' + $location.$$url : '#/';
+function MenuFooterController($scope, $location){
+    var selectedLink = $location.$$url ? '#' + $location.$$url : '#/',
+        activeClass = 'menu-footer__link_state_active';
 
     $scope.vars = {};
 
     $scope.vars.menuItems = [
         {
             'name': 'Home',
-            'link': '/'
+            'link': '#/'
         },
         {
             'name': 'Test',
-            'link': '/test'
+            'link': '#/test'
         }
     ];
 
@@ -20,7 +21,7 @@ function MenuController($scope, $location){
 
     $scope.vars.getClass = function(link){
         if(link === selectedLink){
-            return 'active';
+            return activeClass;
         } else {
             return '';
         };
