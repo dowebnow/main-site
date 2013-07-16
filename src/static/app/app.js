@@ -1,5 +1,5 @@
 angular.module('doWebNow', [])
-    .config(['$routeProvider', '$locationProvider', function($routeProvider){
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
         $routeProvider
             .when('/', {
                 templateUrl: '/static/partials/home/home.html',
