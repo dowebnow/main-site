@@ -18,12 +18,11 @@ function MenuController($scope, $location){
         selectedLink = link;
     };
 
-    $scope.vars.getClass = function(item){
-        if(item.link === selectedLink){
+    $scope.vars.getClass = function(link){
+        if(link === selectedLink){
             return 'active';
         } else {
             return '';
         };
-        history.replaceState({page: 3}, item.name, item.link + 'something');
     };
 };
