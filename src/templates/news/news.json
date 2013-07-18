@@ -1,0 +1,7 @@
+{"posts":[{% for post in news %}
+{"id": {{ post.id }},
+"title": "{{ post.title | escapejs }}",
+"full_text": "{{ post.full_text | escapejs }}"
+}{% if not forloop.last %},{% endif %}
+{% endfor %}],
+"count": {{count}} }
