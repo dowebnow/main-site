@@ -5,23 +5,27 @@
 <head>
     <meta charset="utf-8" />
     <title>Django says Hello World!</title>
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
     {% compress css %}
         <link type="text/less" rel="stylesheet" href="/static/css/init.less" />
     {% endcompress %}
     {% compress js %}
         <script type="text/javascript" src="/static/js/vendor/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="/static/js/vendor/angular.js"></script>
+        <script type="text/javascript" src="/static/js/vendor/angular-resource.js"></script>
 
         <script type="text/javascript" src="/static/app/app.js"></script>
+        <script type="text/javascript" src="/static/app/directives.js"></script>
+        <script type="text/javascript" src="/static/app/filters.js"></script>
+        <script type="text/javascript" src="/static/app/resources.js"></script>
+        <script type="text/javascript" src="/static/app/services.js"></script>
 
         <script type="text/javascript" src="/static/app/menu/MenuHeaderController.js"></script>
         <script type="text/javascript" src="/static/app/menu/MenuFooterController.js"></script>
         <script type="text/javascript" src="/static/app/home/HomeController.js"></script>
+        <script type="text/javascript" src="/static/app/news/NewsController.js"></script>
         <script type="text/javascript" src="/static/app/test/TestController.js"></script>
-
-        <script type="text/javascript" src="/static/directives/menu.js"></script>
     {% endcompress %}
 </head>
 <!--[if lt IE 8]><body class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->

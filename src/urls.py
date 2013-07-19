@@ -7,6 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'index.views.index', name='index'),
+    url(r'^news.json$', 'news.views.posts_json', name='index_news'),
     url(r'^test.json$', 'news.views.posts_json', name='index_test'),
     # url(r'^dowebnow/', include('dowebnow.foo.urls')),
 

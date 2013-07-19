@@ -11,6 +11,8 @@ def index(request):
     })
     return HttpResponse(template.render(context))
 
-def test(request):
-    data = serializers.serialize("json", News.objects.all())
-    return HttpResponse(data, mimetype='application/json')
+def news(request):
+    news = News.objects.all()
+#    data = [news, news.count()]
+    res = serializers.serialize("json", news)
+    return HttpResponse(res, mimetype='application/json')

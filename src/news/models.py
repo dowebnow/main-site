@@ -11,4 +11,4 @@ class News(models.Model):
     published_date = models.DateTimeField('date published')
 
     def __unicode__(self):
-        return self.title
+        return str(self.pk) + self.title

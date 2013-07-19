@@ -1,0 +1,7 @@
+<div ng-controller="NewsController">
+    <div ng-repeat="item in vars.data.posts | pagination: service.pagination.postsPerPage">
+        <h2>#{{ item.id }} {{ item.title }}</h2>
+        <div>{{ item.full_text }}</div>
+    </div>
+    <pagination></pagination>
+</div>

@@ -10,6 +10,10 @@ function MenuHeaderController($scope, $location){
             'link': '#/'
         },
         {
+            'name': 'News',
+            'link': '#/news'
+        },
+        {
             'name': 'Test',
             'link': '#/test'
         }

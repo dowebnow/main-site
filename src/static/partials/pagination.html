@@ -1,0 +1,7 @@
+<ul class="pagination">
+    <li class="pagination__item" ng-click="service.pagination.firstPage()" ng-class="service.pagination.isFirst() && 'pagination__item_state_disabled'">First Page</li>
+    <li class="pagination__item" ng-click="service.pagination.previousPage()" ng-class="service.pagination.isFirst() && 'pagination__item_state_disabled'">Previous Page</li>
+    <li class="pagination__item" ng-click="service.pagination.setPage($index)" ng-repeat="item in vars.data.posts | pagesArray: service.pagination.numberOfPages" ng-class="(service.pagination.currentPage == $index) && 'pagination__item_state_current'">{{ $index + 1 }}</li>
+    <li class="pagination__item" ng-click="service.pagination.nextPage()" ng-class="service.pagination.isLast(service.pagination.numberOfPages) && 'pagination__item_state_disabled'">Next Page</li>
+    <li class="pagination__item" ng-click="service.pagination.lastPage()" ng-class="service.pagination.isLast(service.pagination.numberOfPages) && 'pagination__item_state_disabled'">Last Page</li>
+</ul>

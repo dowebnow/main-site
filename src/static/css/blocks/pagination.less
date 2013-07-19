@@ -1,0 +1,39 @@
+.pagination {
+    margin: 20px 0;
+    padding: 0;
+
+    text-align: center;
+}
+.pagination__item {
+    .inline-block;
+
+    margin: 0 0 0 5px;
+    padding: 5px 10px;
+
+    background-color: #93c054;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: #eee;
+
+        color: #577929;
+    }
+    &.pagination__item_state_current {
+        background-color: #000;
+
+        color: #fff;
+
+        cursor: default;
+    }
+    &.pagination__item_state_disabled {
+        background-color: #fff;
+
+        color: #ddd;
+
+        cursor: default;
+    }
+    &:first-child { margin-left: 0; }
+}
