@@ -106,6 +106,7 @@ INSTALLED_APPS = (
     'news',
     'debug_toolbar',
     'compressor',
+    'api',
 )
 
 # A sample logging configuration. The only tangible logging
