@@ -1,7 +1,7 @@
 angular.module('dowebnowServices', [])
     .service('paginationService', function() {
         this.currentPage = 0;
-        this.postsPerPage = 2;
+        this.postsPerPage = 3;
 
         this.nextPage = function() {
             if(this.isLast()) {
