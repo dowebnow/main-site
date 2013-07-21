@@ -12,7 +12,11 @@ def index(request):
     return HttpResponse(template.render(context))
 
 def news(request):
+    limit = request.GET.get('limit', 10)
+    offset = request.GET.get('offset', 0)
+
     news = News.objects.all()
-#    data = [news, news.count()]
+    news = news[offset:offset+limit]
+
     res = serializers.serialize("json", news)
     return HttpResponse(res, mimetype='application/json')
