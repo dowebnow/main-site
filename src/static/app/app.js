@@ -14,8 +14,9 @@ angular.module('doWebNow', ['dowebnowDirectives', 'dowebnowFilters', 'dowebnowRe
                 controller: TestController
             })
             .otherwise({
-                redirectTo: '/'
+                template: '404 Error'
             });
+        $locationProvider.hashPrefix('!');
 //        $locationProvider.html5Mode(true);
     }])
     .run();

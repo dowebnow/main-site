@@ -21,8 +21,6 @@
         <script type="text/javascript" src="/static/app/resources.js"></script>
         <script type="text/javascript" src="/static/app/services.js"></script>
 
-        <script type="text/javascript" src="/static/app/menu/MenuHeaderController.js"></script>
-        <script type="text/javascript" src="/static/app/menu/MenuFooterController.js"></script>
         <script type="text/javascript" src="/static/app/home/HomeController.js"></script>
         <script type="text/javascript" src="/static/app/news/NewsController.js"></script>
         <script type="text/javascript" src="/static/app/test/TestController.js"></script>
@@ -38,7 +36,11 @@
             <div class="header__logo">Do<span class="header__stress">Web</span>Now</div>
             <div class="header__slogan">&mdash; be creative!</div>
             <div class="header__menu">
-                <menu-header></menu-header>
+                <menu name="header">
+                    <menu-item name="Home" href="#!/"></menu-item>
+                    <menu-item name="News" href="#!/news"></menu-item>
+                    <menu-item name="Test" href="#!/test"></menu-item>
+                </menu>
             </div>
         </div>
     </header>
@@ -52,7 +54,12 @@
             <div class="footer__logo"></div>
             <div class="footer__slogan"></div>
             <div class="footer__menu">
-                <menu-footer></menu-footer>
+                <menu name="footer">
+                    <menu-item name="Home" href="#!/"></menu-item>
+                    <menu-item name="News" href="#!/news"></menu-item>
+                    <menu-item name="Contact Us" href="#!/contact-us"></menu-item>
+                    <menu-item name="Test" href="#!/test"></menu-item>
+                </menu>
             </div>
         </div>
     </footer>
