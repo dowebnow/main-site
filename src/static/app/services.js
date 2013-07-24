@@ -1,4 +1,9 @@
 angular.module('dowebnowServices', [])
+    .factory('menuService', function() {
+        return {
+            menuService: 'menuService'
+        };
+    })
     .service('paginationService', function() {
         this.currentPage = 0;
         this.postsPerPage = 3;

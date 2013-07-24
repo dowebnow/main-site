@@ -29,12 +29,20 @@ angular.module('dowebnowDirectives', [])
                     '</a>' +
                 '</li>',
             controller: function($scope, $location) {
-                $scope.currentURL = '#!' + $location.$$url;
-                $scope.isActive = ($scope.currentURL === $scope.href);
+                var _this = this;
+
+                this.getCurrent = function() {
+                    $scope.currentURL = '#!' + $location.$$url;
+                    $scope.isActive = ($scope.currentURL == $scope.href);
+                };
+
+                $scope.$on('$locationChangeStart', function() {
+                    _this.getCurrent();
+                    $scope.currentClass = $scope.isActive ? ' menu-' + $scope.menuName + '__link_state_current' : '';
+                });
             },
             link: function(scope, element, attributes, MenuController) {
                 scope.menuName = MenuController.name;
-                scope.currentClass = scope.isActive ? ' menu-' + scope.menuName + '__link_state_current' : '';
             }
         };
     })
