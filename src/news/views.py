@@ -26,14 +26,13 @@ def posts_json(request):
     offset = DEFAULT_OFFSET
     try:
         offset = int(request.GET.get('offset', DEFAULT_OFFSET))
-        print offset
 
         if offset == u'':
             raise ValueError
     except:
         return HttpResponse('wrong offset', mimetype="text/plain", status=400)
 
-    news = news[offset:limit + offset]
+    news = news[offset:limit + offset:-1]
 
     context = RequestContext(request, {
         'news': news,
