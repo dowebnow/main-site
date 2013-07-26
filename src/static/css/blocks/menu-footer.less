@@ -5,20 +5,36 @@
 .menu-footer__item {
     .inline-block;
 
-    margin-left: 36px;
+    border-left: #444 1px solid;
+
+    margin-left: 18px;
+    padding-left: 18px;
 
     list-style: none;
 
     &:first-child {
         margin-left: 0;
+        padding-left: 0;
+        border-left: none;
     }
 }
 .menu-footer__link {
-    color: #333;
-    font-family: 'Open Sans', sans-serif;
+    color: #666;
+    font-family: @ff-dosis;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
     text-decoration: none;
 
-    &.menu-footer__link_state_active {
-        color: #ff7100;
+    transition: color 450ms;
+
+    &:hover {
+        color: #999;
+    }
+
+    &.menu-footer__link_state_current {
+        color: #999;
+        cursor: default;
     }
 }
