@@ -1,13 +1,13 @@
 angular.module('dowebnowDirectives', [])
     .directive('menu', function(){
         return {
-            restrict: 'E',
-            transclude: true,
             replace: true,
+            restrict: 'E',
             scope: {
                 name: '@'
             },
             template: '<ul class="menu-{{ name }}" ng-transclude></ul>',
+            transclude: true,
             controller: function($scope) {
                 this.name = $scope.name;
             }
@@ -15,9 +15,9 @@ angular.module('dowebnowDirectives', [])
     })
     .directive('menuItem', function() {
         return {
-            restrict: 'E',
             replace: true,
             require: '^menu',
+            restrict: 'E',
             scope: {
                 name: '@',
                 href: '@'
@@ -46,13 +46,31 @@ angular.module('dowebnowDirectives', [])
             }
         };
     })
-    .directive('pagination', function factory() {
+    .directive('pagination', function() {
         return {
-            templateUrl: '/static/partials/pagination.html',
+            replace: true,
             restrict: 'E',
-            controller: function($scope, paginationService) {
-                $scope.service || ($scope.service = {});
-                $scope.service.pagination = paginationService;
+            scope: {
+                count: '@',
+                limit: '@',
+                update: '&'
+            },
+            templateUrl: '/static/partials/pagination.html',
+            controller: function($scope) {
+            },
+            link: function(scope) {
+                var _this = this;
+
+                scope.$watch('count', function(count) {
+                    if(count) {
+                        _this.init(count);
+                    };
+                });
+
+                this.init = function(count) {
+                    scope.pages = Math.ceil(count / scope.limit);
+                    scope.update({limit: scope.limit, offset: 0});
+                };
             }
         };
     });

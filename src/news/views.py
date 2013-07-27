@@ -32,7 +32,8 @@ def posts_json(request):
     except:
         return HttpResponse('wrong offset', mimetype="text/plain", status=400)
 
-    news = news[offset:limit + offset:-1]
+    news = news[::-1]
+    news = news[offset:limit + offset]
 
     context = RequestContext(request, {
         'news': news,

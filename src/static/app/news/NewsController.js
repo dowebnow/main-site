@@ -1,12 +1,13 @@
-function NewsController($scope, newsResource, paginationService){
-    $scope.vars || ($scope.vars = {});
+function NewsController($scope, newsResource){
+    $scope.news || ($scope.news = {});
 
-    if(paginationService.currentPage != 0) {
-        paginationService.firstPage();
+    $scope.getPage = function(limit, offset) {
+        newsResource.get({limit: limit, offset: offset}, function(data) {
+            $scope.news.posts = data.posts;
+        });
     };
 
     newsResource.get(function(data) {
-        $scope.vars.data = data;
-        paginationService.setCount(data.count);
+        $scope.news.count = data.count;
     });
 };

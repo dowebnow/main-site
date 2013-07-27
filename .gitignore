@@ -229,3 +229,6 @@ local
 /static
 src/local_settings.py
 src/uwsgi.ini
+
+src/static/CACHE
+src/static/admin
