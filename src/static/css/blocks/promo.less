@@ -1,0 +1,59 @@
+.promo {
+    background-color: #666;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.promo__cover {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 100%;
+
+    transition: bottom 500ms ease;
+}
+
+.promo__cover-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+.promo__inner {
+    max-width: @global-max-width;
+    margin: auto;
+    position: relative;
+}
+
+.promo__content {
+    position: absolute;
+    margin: 50px 0;
+    bottom: 0;
+    left: 15%;
+    right: 15%;
+    z-index: 1;
+}
+
+.promo__title {
+    margin: 0 0 20px;
+
+    color: #fff;
+    font-family: @ff-dosis;
+    font-size: 26px;
+    font-weight: 200;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+.promo__text {
+    margin: 0;
+
+    color: #fff;
+    font-family: @ff-dosis;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+    text-decoration: none;
+    text-align: center;
+}
