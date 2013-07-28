@@ -11,3 +11,5 @@ psycopg2
 pep8
 django-tagging
 uwsgi
+south
+PIL

@@ -8,7 +8,9 @@ class News(models.Model):
 
     title = models.CharField(max_length=200)
     full_text = models.TextField()
-    published_date = models.DateTimeField('date published')
+    author = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='posts_images/')
+    published_date = models.DateTimeField(auto_now_add=True, verbose_name='date published')
 
     def __unicode__(self):
         return str(self.pk) + self.title

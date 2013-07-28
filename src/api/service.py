@@ -7,5 +7,5 @@ from django.http import HttpResponse
 
 def start(request):
     raw_input = Input(request)
-    print raw_input
+    #print raw_input
     return HttpResponse(request, mimetype="text/plain")

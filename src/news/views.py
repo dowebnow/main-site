@@ -12,7 +12,7 @@ def posts_json(request):
     news = News.objects.all()
     json_template = loader.get_template('news/news.json')
 
-    news_count =  news.count()
+    news_count = news.count()
 
     limit = DEFAULT_LIMIT
     try:
