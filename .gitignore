@@ -232,3 +232,4 @@ src/uwsgi.ini
 
 src/static/CACHE
 src/static/admin
+src/media/
