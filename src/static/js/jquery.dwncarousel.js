@@ -86,13 +86,10 @@
         };
 
         if(settings.waitForFontFace) {
-            console.log('1');
             $('body').on(settings.fontFaceLoadedEvent, function() {
-                console.log('2');
                 init();
             });
         } else {
-            console.log('3');
             init();
         };
     };
