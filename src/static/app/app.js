@@ -20,7 +20,9 @@ angular.module('doWebNow', ['dowebnowDirectives', 'dowebnowFilters', 'dowebnowRe
 //        $locationProvider.html5Mode(true);
     }])
     .run(['globalState', function(globalState) {
+        console.log('Run started');
         $('body').on('fontsReady', function() {
+            console.log('fontsReady');
             globalState.fontFaceLoaded = true;
         });
     }]);
