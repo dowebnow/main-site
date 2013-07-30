@@ -21,8 +21,12 @@ angular.module('doWebNow', ['dowebnowDirectives', 'dowebnowFilters', 'dowebnowRe
     }])
     .run(['globalState', function(globalState) {
         console.log('Run started');
-        $('body').on('fontsReady', function() {
-            console.log('fontsReady');
+        if ($('body').hasClass('wf-active')) {
             globalState.fontFaceLoaded = true;
-        });
+        } else {
+            $('body').on('fontsReady', function() {
+                console.log('fontsReady');
+                globalState.fontFaceLoaded = true;
+            });
+        }
     }]);
