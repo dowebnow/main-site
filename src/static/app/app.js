@@ -21,7 +21,7 @@ angular.module('doWebNow', ['dowebnowDirectives', 'dowebnowFilters', 'dowebnowRe
     }])
     .run(['globalState', function(globalState) {
         console.log('Run started');
-        if ($('body').hasClass('wf-active')) {
+        if ($('html').hasClass('wf-active')) {
             globalState.fontFaceLoaded = true;
         } else {
             $('body').on('fontsReady', function() {
