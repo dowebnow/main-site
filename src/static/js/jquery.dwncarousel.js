@@ -1,70 +1,113 @@
 (function($){
-   var dwnCarousel = function(element, options) {
-       var elem = $(element),
-           obj = this,
-           settings = $.extend({
-               itemClass: 'hero__item',                  //
-               currentClass: 'hero__item_state_current', //
-               coverClass: 'hero__cover',                //
-               captionClass: 'hero__caption'             //
-           }, options || {}),
-           $items = $('.' + settings.itemClass);
+    var dwnCarousel = function(element, options) {
+        var $element = $(element),
+            object = this,
+            settings = $.extend({
+                itemClass: 'hero__item',
+                currentClass: 'hero__item_state_current',
+                coverClass: 'hero__cover',
+                captionClass: 'hero__caption',
+                loaderClass: 'loader',
+                loaderSrc: '/static/img/loader.gif',
+                waitForFontFace: true,
+                fontFaceLoadedEvent: 'fontsReady'
+            }, options || {}),
+            $items = $('.' + settings.itemClass);
 
-       var currentItem = 0;
+        var currentSlide = 0;
 
-       this.nextSlide = function() {
-           //
-           currentItem++;
-       };
+        $items.on({
+            click: function() {
+                object.nextSlide();
+            }
+        });
 
-       var init = function() {
-           preloadImages();
-       };
-       
-       var preloadImages = function() {
-           var loaded = 0;
+        this.getCurrentSlide = function() {
+            return currentSlide%$items.length;
+        };
 
-           $items.each(function() {
-               var _this = this,
-                   img = new Image(),
-                   src = $(this).find('.' + settings.coverClass).data('src');
+        this.setCurrentSlide = function(slide) {
+            currentSlide = slide;
+        };
 
-               img.onload = function() {
-                   loaded++;
-                   _this.image = src;
-                   if(loaded === $items.length) {
-                        onItemsLoaded();
-                   };
-               };
+        this.nextSlide = function() {
+            currentSlide++;
+            console.log(object.getCurrentSlide());
 
-               img.src = src;
-           });
-       };
+            $items.removeClass(settings.currentClass).eq(object.getCurrentSlide()).addClass(settings.currentClass);
+        };
 
-       var onItemsLoaded = function() {
-           $($items[0]).addClass(settings.currentClass);
-           $items.each(function() {
-               $(this).find('.' + settings.coverClass).css({
-                   'background-image': 'url("' + this.image + '")'
-               });
-           });
-       };
+        var init = function() {
+            $($items[0]).addClass(settings.currentClass);
+            appendLoaders();
+            preloadImages();
+        };
 
-       init();
-   };
+        var preloadImages = function() {
 
-   $.fn.dwncarousel = function(options) {
-       return this.each(function() {
-           var element = $(this);
+            $items.each(function() {
+                var _this = this,
+                    img = new Image(),
+                    src = $(this).find('.' + settings.coverClass).data('src');
 
-           // Return early if this element already has a plugin instance
-           if (element.data('dwncarousel')) return;
+                this.coverLoaded = false;
 
-           // pass options to plugin constructor
-           var dwncarousel = new dwnCarousel(this, options);
+                img.onload = function() {
+                    _this.coverLoaded = true;
+                    $(_this).find('.' + settings.coverClass).css({
+                        'background-image': 'url("' + src + '")'
+                    });
+                    onItemLoaded(_this);
+                };
 
-           // Store plugin object in this element's data
-           element.data('dwncarousel', dwncarousel);
-       });
-   };
+                img.src = src;
+            });
+        };
+
+        var onItemLoaded = function(item) {
+            $(item).find('.' + settings.loaderClass).remove();
+        };
+
+        var appendLoaders = function() {
+            $items.each(function() {
+                var img = new Image();
+                img.src = settings.loaderSrc;
+                img.className = settings.loaderClass;
+
+                $(this).append(img);
+                moveLoader(this);
+            });
+        };
+
+        var moveLoader = function(item) {
+            var loader = $(item).find('.' + settings.loaderClass),
+                loaderMargin = parseInt(loader.css('marginTop'), 10),
+                captionHeight = $(item).find('.' + settings.captionClass).outerHeight(true);
+
+            loader.css({'marginTop': loaderMargin - captionHeight / 2});
+        };
+
+        if(settings.waitForFontFace) {
+            $('body').on(settings.fontFaceLoadedEvent, function() {
+                init();
+            });
+        } else {
+            init();
+        };
+    };
+
+    $.fn.dwncarousel = function(options) {
+        return this.each(function() {
+            var element = $(this);
+
+            // Return early if this element already has a plugin instance
+            if (element.data('dwncarousel')) return;
+
+            // pass options to plugin constructor
+            var dwncarousel = new dwnCarousel(this, options);
+
+            // Store plugin object in this element's data
+            element.data('dwncarousel', dwncarousel);
+        });
+    };
 })(jQuery);
