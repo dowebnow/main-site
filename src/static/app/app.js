@@ -19,4 +19,8 @@ angular.module('doWebNow', ['dowebnowDirectives', 'dowebnowFilters', 'dowebnowRe
         $locationProvider.hashPrefix('!');
 //        $locationProvider.html5Mode(true);
     }])
-    .run();
+    .run(['globalState', function(globalState) {
+        $('body').on('fontsReady', function() {
+            globalState.fontFaceLoaded = true;
+        });
+    }]);

@@ -32,7 +32,6 @@
 
         this.nextSlide = function() {
             currentSlide++;
-            console.log(object.getCurrentSlide());
 
             $items.removeClass(settings.currentClass).eq(object.getCurrentSlide()).addClass(settings.currentClass);
         };

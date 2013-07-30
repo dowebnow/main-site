@@ -1,11 +1,11 @@
-function HeroController($scope) {
-    console.log('HeroController Start!');
-
+function HeroController($scope, globalState) {
     var heroHeight = getHeroHeight();
 
     $('.hero').height(heroHeight);
 
-    $('.hero').dwncarousel();
+    $('.hero').dwncarousel({
+        waitForFontFace: !globalState.fontFaceLoaded
+    });
 
     function getHeroHeight() {
         var height = $(window).height() - $('.header').outerHeight();

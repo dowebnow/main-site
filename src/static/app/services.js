@@ -1,6 +1,6 @@
 angular.module('dowebnowServices', [])
-    .factory('menuService', function() {
+    .factory('globalState', function() {
         return {
-            menuService: 'menuService'
+            fontFaceLoaded: false
         };
     });
