@@ -15,14 +15,8 @@
         z-index: 10;
 
         background-color: @red;
-
-//        .transition(~"all 2s linear");
     }
-    .hero__timer.hero__timer_state_done {
-        width: 100%;
-
-//        .transition(~"all 2s linear");
-    }
+    .hero__timer.hero__timer_state_done { width: 100%; }
     .hero__item {
 
         &.hero__item_state_current { z-index: 5; }
@@ -65,7 +59,7 @@
         }
             .hero__holder {
                 margin: auto;
-                width: @global-max-width;
+                max-width: @global-max-width;
             }
                 .hero__content {
                     padding: 30px 15%;
