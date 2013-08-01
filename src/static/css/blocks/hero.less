@@ -5,6 +5,24 @@
 
     background-color: #333;
 }
+    .hero__timer {
+        height: 3px;
+        width: 0;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+
+        background-color: @red;
+
+//        .transition(~"all 2s linear");
+    }
+    .hero__timer.hero__timer_state_done {
+        width: 100%;
+
+//        .transition(~"all 2s linear");
+    }
     .hero__item {
 
         &.hero__item_state_current { z-index: 5; }
