@@ -4,13 +4,14 @@
 <html ng-app="doWebNow">
 <head>
     <meta charset="utf-8" />
-    <title>Django says Hello World!</title>
+    <title>Do Web Now &mdash; be creative!</title>
     <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
 
     {% compress css %}
-        <link type="text/less" rel="stylesheet" href="/static/css/init.less" />
+        <link type="text/less" rel="stylesheet" href="/static/css/main.css" />
     {% endcompress %}
     {% compress js %}
+        <script type="text/javascript" src="/static/js/vendor/html5shiv-printshiv.js"></script>
         <script type="text/javascript" src="/static/js/vendor/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="/static/js/fontface.js"></script>
         <script type="text/javascript" src="/static/js/vendor/angular.js"></script>
@@ -30,42 +31,56 @@
         <script type="text/javascript" src="/static/js/jquery.dwncarousel.js"></script>
     {% endcompress %}
 </head>
-<!--[if lt IE 8]><body class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
-<!--[if IE 8]><body class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if lt IE 9]><body class="lt-ie10 lt-ie9 ie8"><![endif]-->
 <!--[if IE 9]><body class="lt-ie10 ie9"><![endif]-->
 <!--[if gt IE 9]><!--><body><!--<![endif]-->
 
-    <header class="header">
-        <div class="header__inner">
-            <div class="header__logo">Do<span class="header__stress">Web</span>Now</div>
-            <div class="header__slogan">&mdash; be creative!</div>
-            <div class="header__menu">
-                <menu name="header">
-                    <menu-item name="Home" href="#!/"></menu-item>
-                    <menu-item name="News" href="#!/news"></menu-item>
-                    <menu-item name="Test" href="#!/test"></menu-item>
-                </menu>
-            </div>
-        </div>
-    </header>
+    <div class="base">
 
-    <div class="layout">
-        <ng-view></ng-view>
+        <header class="header">
+            <div class="header__inner">
+                <a class="header__logo" href="#!/">Do<span class="header__stress">Web</span>Now</a>
+                <span class="header__slogan">&mdash; be creative!</span>
+                <div class="header__menu">
+                    <menu name="header">
+                        <menu-item name="Home" href="#!/"></menu-item>
+                        <menu-item name="News" href="#!/news"></menu-item>
+                        <menu-item name="Test" href="#!/test"></menu-item>
+                    </menu>
+                </div>
+            </div>
+        </header>
+
+        <div class="layout">
+            <div ng-view></div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer__copyright">&copy; 2013 doWebNow.com</div>
+                <div class="footer__social">
+                    <ul class="social">
+                        <li class="social__item">
+                            <a class="social__link social__link_icon_github" href="#">GitHub</a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link social__link_icon_linkedin" href="#">LinkedIn</a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link social__link_icon_facebook" href="#">Facebook</a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link social__link_icon_googleplus" href="#">Google Plus</a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link social__link_icon_twitter" href="#">Twitter</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
     </div>
-
-    <footer class="footer">
-        <div class="footer__inner">
-            <div class="footer__copyright">&copy; 2013 doWebNow.com</div>
-            <div class="footer__menu">
-                <menu name="footer">
-                    <menu-item name="Home" href="#!/"></menu-item>
-                    <menu-item name="News" href="#!/news"></menu-item>
-                    <menu-item name="Contact Us" href="#!/contact-us"></menu-item>
-                    <menu-item name="Test" href="#!/test"></menu-item>
-                </menu>
-            </div>
-        </div>
-    </footer>
 
 </body>
 </html>

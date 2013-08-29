@@ -1,0 +1,28 @@
+.clients { margin: 0 0 40px; }
+    .clients__inner {
+        margin: auto;
+        max-width: $content-width - $padding * 2;
+        padding: 0 $padding;
+    }
+        .clients__header {
+            margin-bottom: 40px;
+
+            color: $grey-light;
+            font-family: $ff-open-sans;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 29px;
+        }
+        .clients__holder { @include justify; }
+            .clients__item {
+                border-radius: 5px;
+                display: inline-block;
+                height: 270px;
+                width: 270px;
+
+                background: $white-shadow;
+            }
+                .clients__image {
+                    border-radius: 5px;
+                    display: block;
+                }

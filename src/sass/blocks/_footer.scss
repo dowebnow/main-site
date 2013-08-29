@@ -1,0 +1,18 @@
+.footer { background: $grey-shadow; }
+    .footer__inner {
+        @include clearfix;
+
+        margin: auto;
+        max-width: $content-width - $padding * 2;
+        padding: 20px $padding;
+    }
+        .footer__copyright {
+            float: left;
+
+            color: $white;
+            font-family: $ff-open-sans;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 30px;
+        }
+        .footer__social { float: right; }

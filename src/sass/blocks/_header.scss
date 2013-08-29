@@ -1,0 +1,42 @@
+.header {
+    padding: 20px 0;
+
+    background: $grey;
+}
+    .header__inner {
+        margin: auto;
+        max-width: $content-width - $padding * 2;
+        padding: 0 $padding;
+
+        font-size: 0;
+    }
+        .header__logo {
+            display: inline-block;
+
+            color: $white;
+            font-family: $ff-dosis;
+            font-size: 30px;
+            font-weight: 300;
+            line-height: 34px;
+            text-decoration: none;
+            text-transform: uppercase;
+            vertical-align: top;
+        }
+            .header__stress { color: $red-shadow; }
+        .header__slogan {
+            border-left: $white-shadow solid 1px;
+            display: inline-block;
+            margin: 7px 0 0 25px;
+            padding: 0 0 0 25px;
+
+            color: $white-shadow;
+            font-family: $ff-dosis;
+            font-size: 16px;
+            font-weight: 200;
+            line-height: 22px;
+            vertical-align: top;
+        }
+        .header__menu {
+            float: right;
+            margin-top: 7px;
+        }

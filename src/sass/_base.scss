@@ -1,0 +1,22 @@
+html {
+    height: 100%;
+    overflow-y: scroll;
+}
+body {
+    height: 100%;
+    min-width: $min-width;
+
+    background: $grey-light;
+}
+
+.base {
+    @include box-shadow(0 0 10rem 0 $black);
+
+    height: auto !important;
+    height: 100%;
+    margin: auto;
+    max-width: $max-width;
+    min-height: 100%;
+
+    background: $white-shadow;
+}

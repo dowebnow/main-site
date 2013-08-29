@@ -1,0 +1,33 @@
+@mixin social__link_icon($icon){
+    &.social__link_icon_#{$icon} { background: url('/static/img/svg/social__link_icon_#{$icon}.svg'); }
+};
+
+.social {
+    margin: 0;
+
+    font-size: 0;
+}
+    .social__item {
+        display: inline-block;
+        margin-left: 20px;
+        padding: 0;
+
+        list-style: none;
+        vertical-align: top;
+
+        &:first-child { margin-left: 0; }
+    }
+        .social__link {
+            display: block;
+            height: 30px;
+            width: 30px;
+
+            text-indent: -99999px;
+            text-indent: -99999px;
+
+            @include social__link_icon('facebook');
+            @include social__link_icon('github');
+            @include social__link_icon('googleplus');
+            @include social__link_icon('linkedin');
+            @include social__link_icon('twitter');
+        }

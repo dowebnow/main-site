@@ -1,4 +1,4 @@
-.clearfix {
+@mixin clearfix {
     &:after,
     &:before {
         display: table;
@@ -8,16 +8,11 @@
     &:after {
         clear: both;
     }
-    .lt-ie8 & {
-        zoom: 1;
-    }
 }
 
-.negative-indent {
-    text-indent: -99999px;
-}
+@mixin negative-indent { text-indent: -99999px; }
 
-.justify {
+@mixin justify {
     font-size: 1px;
     line-height: 0;
     text-align: justify;
@@ -31,23 +26,5 @@
         width: 100%;
 
         content: '';
-    }
-
-    .lt-ie8 & {
-        text-align-last: justify;
-
-        zoom: 1;
-    }
-}
-
-.inline-block {
-    display: inline-block;
-
-    vertical-align: top;
-
-    .lt-ie8 & {
-        display: inline;
-
-        zoom: 1;
     }
 }

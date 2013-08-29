@@ -1,0 +1,22 @@
+.palette {
+    font-size: 0;
+}
+    .palette__item {
+        display: inline-block;
+        height: 20px;
+        width: 10%;
+
+        &.palette__item_color_01 { background-color: $white; }
+        &.palette__item_color_02 { background-color: $white-shadow; }
+        &.palette__item_color_03 { background-color: $white-double-shadow; }
+
+        &.palette__item_color_04 { background-color: $red-light; }
+        &.palette__item_color_05 { background-color: $red; }
+        &.palette__item_color_06 { background-color: $red-shadow; }
+
+        &.palette__item_color_07 { background-color: $grey-light; }
+        &.palette__item_color_08 { background-color: $grey; }
+        &.palette__item_color_09 { background-color: $grey-shadow; }
+
+        &.palette__item_color_10 { background-color: $black; }
+    }

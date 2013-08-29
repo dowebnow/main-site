@@ -1,0 +1,27 @@
+// Color Palette
+$red: #f87171;
+$red-shadow: darken($red, 10%);
+$red-light: lighten($red, 10%);
+
+// Grayscale Palette
+$white: #fff;
+$white-shadow: darken($white, 10%);
+$white-double-shadow: darken($white, 20%);
+$grey: #333;
+$grey-shadow: darken($grey, 10%);
+$grey-light: lighten($grey, 10%);
+$black: #000;
+$black-light: lighten($black, 10%);
+
+// Width
+$min-width: 320px;
+$max-width: 1920px;
+$content-width: 1240px;
+
+// Padding
+$padding: 30px;
+
+// @font-face
+$ff-dosis: 'Dosis', sans-serif;
+$ff-open-sans: 'Open Sans', sans-serif;
+$ff-open-sans-condensed: 'Open Sans Condensed', sans-serif;

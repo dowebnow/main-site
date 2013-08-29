@@ -1,5 +1,5 @@
 WebFontConfig = {
-    google: { families: [ 'Dosis::latin' ] },
+    google: { families: [ 'Dosis::latin-ext', 'Open+Sans:400:latin-ext', 'Open+Sans+Condensed::latin-ext' ] },
     active: function() {
         $('body').trigger('fontsReady');
     }
